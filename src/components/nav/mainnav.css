@@ -1,0 +1,22 @@
+.container{
+    display:flex;
+    flex-flow: row;
+    height:50px;
+    padding:0 20px;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.logo{
+    color:orange;
+}
+
+.main-nav ul{
+    display:flex;
+    flex-flow: row;
+}
+
+.main-nav ul li{
+    list-style:none;
+    padding:5px 10px;
+}
