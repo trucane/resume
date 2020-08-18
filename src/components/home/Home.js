@@ -1,6 +1,7 @@
 import React from 'react';
 import MainNav from '../nav/MainNav';
 import HomeContent from './HomeContent';
+import HomeSkill from './HomeSkill';
 
 
 
@@ -12,7 +13,7 @@ const Home = () => {
         <React.Fragment>
             <MainNav />
             <HomeContent />
-            <section>Skill Icons</section>
+            <HomeSkill />
         </React.Fragment>
     )
 }

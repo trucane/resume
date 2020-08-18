@@ -2,23 +2,56 @@
 --section-height:50vh;
 --bg:orange
 }
-.section{
+
+section{
     display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.skill_container{
+    width:350px;
+    height:400px;
+    display:flex;
+    flex-flow:column;
     justify-content: center;
     align-items: center;
-    background-color:var(--bg);
-    height:var(--section-height);
 }
+
+
+.skill_container h5{
+    margin:20px 0 5px 0;
+}
+
+
+.section{
+    justify-content: center;
+    height:calc(var(--section-height) - 50px);
+    background-color:var(--bg);
+}
+
+
 .section p{
     color:#fff;
+    font-size:30px;
+    width:750px
 }
 
 .section p::before{
-    content:'&quot';
-    color:black
+    content:'\" ';
+    color:black;
 }
 
 .section p::after{
-    content:'&quot';
+    content:' \0022';
     color:black
+}
+
+.skill{
+    height:var(--section-height)
+}
+
+img{
+    width:250px;
+    height:250px;
 }
