@@ -9,7 +9,7 @@ const HomeSkill = props =>{
 
     return(
         <section className={styles.skill_container}>
-            {skills.map( (skill) => <Skill props={skill} /> )}
+            {skills.map( (skill) => <Skill key={skill.name} props={skill} /> )}
         </section>
     )
 }
