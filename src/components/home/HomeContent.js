@@ -4,7 +4,7 @@ import styles from './home.module.css'
 
 const HomeContent = () =>{
     return(
-        <section className={styles.section}>
+        <section className={styles.main_container}>
             <p>Some words of wisdom from a subpar programmer who tries to strive to do more</p>
         </section>
     )

@@ -8,7 +8,7 @@ import Skill from './Skill';
 const HomeSkill = props =>{
 
     return(
-        <section className={styles.skill}>
+        <section className={styles.skill_container}>
             {skills.map( (skill) => <Skill props={skill} /> )}
         </section>
     )
