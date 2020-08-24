@@ -1,9 +1,3 @@
-:root{
---section-height:50vh;
---bg:orange
-}
-
-
 
 .home_container{
     display:flex;
@@ -13,7 +7,7 @@
 }
 
 
-section{
+.section{
     display:flex;
     align-items: center;
     justify-content: space-around;
@@ -23,11 +17,11 @@ section{
 .main_container{
     background:orange;
     text-align:center;
-    height:calc(50vh - 100px)
+    height:calc(50vh - 120px)
 }
 
 
-.main_container details{
+.main_container p{
     color:#fff;
     font-size:30px;
     width:750px
@@ -47,21 +41,24 @@ section{
 
 
 .skill_container{ 
-    height:calc(50vh + 50px)
+    height:calc(50vh);
+    flex-flow:row;
+    padding-top:50px;
 }
 
 .skill{
     width:350px;
     height:400px;
-    display:flex;
-    flex-flow:column;
-    justify-content: center;
-    align-items: center;
-    text-align:center;
+    /* text-align:center; */
 }
 
 .skill h5{
     margin:20px 0 5px 0;
+    color:orange
+}
+
+.skill p{
+    color:#696969;
 }
 
 .skill img{
@@ -90,7 +87,7 @@ section{
     }
     
     .skill{
-        margin-top:70px;
+        margin-top:80px;
         width:300px;
     }
 
