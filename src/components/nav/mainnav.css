@@ -1,12 +1,13 @@
 :root{
-    --ease:.3s
+    --main-color:orange;
+    --second-color:#8B8682;
+    --ease:.3s;
 }
 
 .container{
     display:flex;
     flex-flow: row;
     height:50px;
-    /* background:#ccc; */
     box-shadow: 5px 5px rgb(250, 244, 236);
     margin-bottom: 5px;
     padding:0 20px;
@@ -15,7 +16,7 @@
 }
 
 .logo{
-    color:blue;
+    color:var(--main-color);
 }
 
 .main-nav ul{
@@ -33,6 +34,12 @@
 .main-nav ul li a{
     text-decoration:none;
     color:black;
+}
+
+
+.main-nav ul li a:hover{
+    text-decoration:none;
+    color:var(--second-color);
 }
 
 .burger{
@@ -54,6 +61,7 @@
         right:-100%;
         width:100%;
         height:100vh;
+        background:#8B8682;
     }
     
     .main-nav ul li{
@@ -70,30 +78,16 @@
     
     
     .main-nav ul li:hover{
-        background:lightgreen;
-        color:white;
-        
+        background:#F4A460;
     }
     
-    .main-nav ul li:hover{
+    .main-nav ul li:hover ~ a{
         font-weight:bold;
         color:white;
     }
-    
-    .main-nav.active{
-        background:green;
-        z-index:20;
-    }
 
     .main-nav.open ul{
-        display:flex;
-        flex-flow:column;
-        position:fixed;
-        top:0;
         right:0;
-        width:100%;
-        height:100vh;
-        background:green;
         transition: var(--ease) ease-out;
     }
 
@@ -105,10 +99,16 @@
     }
 
     .burger div{
+        position:relative;
         width:40px;
         height:5px;
         margin:5px;
         border-radius:20px;
-        background:orange;
+        background:var(--main-color);
     }
+
+    .burger.open div{
+        background:#fff;
+    }
+    
 }

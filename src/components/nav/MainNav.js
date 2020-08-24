@@ -2,9 +2,6 @@ import React from "react";
 import "./mainnav.css";
 import { Link } from "react-router-dom";
 
-import cv from 'classnames';
-import { queryByAttribute } from "@testing-library/react";
-
 class MainNav extends React.Component {
 
 
@@ -28,8 +25,8 @@ class MainNav extends React.Component {
   }
 
   activeLink = (value) =>{
-    let target = document.querySelectorAll([`data-name="${value}"`]);
-    console.log(target)
+    // let target = document.querySelectorAll(['data-name=${value}']);
+    // console.log(target)
   }
 
   getWindowSize = () => {
@@ -68,7 +65,7 @@ class MainNav extends React.Component {
 
 
 
-        <menu className='burger' onClick={this.toggleBurger}>
+        <menu className={mobile ? 'burger open' : 'burger'} onClick={this.toggleBurger}>
           <div></div>
           <div></div>
           <div></div>
