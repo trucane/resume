@@ -38,7 +38,7 @@ class MainNav extends React.Component {
     }
   }
 
-  componentWillMount(){
+  componentWillUnMount(){
     //remove event listener
     window.addEventListener("resize", this.getWindowSize.bind(this))
   }

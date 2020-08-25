@@ -11,7 +11,7 @@ const Home = () => {
 
 
     return(
-        <div className={styles.home_container}>
+        <div className='home_container'>
             <MainNav />
             <HomeContent />
             <HomeSkill />
