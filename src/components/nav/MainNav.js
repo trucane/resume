@@ -2,6 +2,15 @@ import React from "react";
 import "./mainnav.css";
 import { Link } from "react-router-dom";
 
+
+const menuItems = [
+  {name:'Home'},
+  {name:'About'},
+  // {name:'Projects'},
+  // {name:'Skills'},
+  // {name:'Contact'},
+]
+
 class MainNav extends React.Component {
 
 
@@ -14,13 +23,13 @@ class MainNav extends React.Component {
     //mount get window size method
     this.getWindowSize()
 
-    //bind this to VR DOM window
+    //bind this to VR DOM
     window.addEventListener("resize", this.getWindowSize.bind(this))
   }
 
 
-  toggleBurger = () =>{
-    //set mobile state to true or false
+  toggleMobileView = () =>{
+    //toggle mobile state to true or false
     this.setState({mobile:!this.state.mobile}, () => '')
   }
 
@@ -38,7 +47,7 @@ class MainNav extends React.Component {
     }
   }
 
-  componentWillUnMount(){
+  componentWillUnmount(){
     //remove event listener
     window.addEventListener("resize", this.getWindowSize.bind(this))
   }
@@ -50,22 +59,20 @@ class MainNav extends React.Component {
         <div className="logo">logo</div>
         <nav className={mobile ? 'main-nav open' : 'main-nav'}>
           <ul>
-            <li>
-              <Link to="/" data-name='Home' >Home</Link>
-            </li>
-            <li>
-              <Link to="/about" data-name='About' onClick={(e) => this.activeLink('About')} >About</Link>
-            </li>
-            <li data-name='Projects'onClick={() => this.activeLink('Project')} >Projects</li>
-            <li data-name='Skills'onClick={() => this.activeLink('Skills')} >Skills</li>
-            <li data-name='Contact' onClick={() => this.activeLink('Contact')} >Contact</li>
+            {menuItems.map(({name}, index) =>(
+              <li key={index}>
+                <Link 
+                  className='link' 
+                  to={name === 'Home' ? '/' : name}
+                  data-test={`'${name}'`} 
+                  onClick={() => this.activeLink(name)}  >{name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
-
-
-
-        <menu className={mobile ? 'burger open' : 'burger'} onClick={this.toggleBurger}>
+        <menu className={mobile ? 'burger open' : 'burger'} data-test='Burger' onClick={this.toggleMobileView}>
           <div></div>
           <div></div>
           <div></div>
